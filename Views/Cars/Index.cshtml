@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Car list Page";
+}
+
+<h2>All cars here</h2>
+@if (Model.CurrentCategory == "electro")
+{
+    <h3>Only electric cars</h3>
+}
+else if (Model.CurrentCategory == "fuel")
+{
+    <h3>Only fuel cars</h3>
+}
+<div class="row mt-5 mb-2">
+    <br />
+    @{
+        foreach (Car car in Model.cars)
+        {
+            @Html.Partial("AllCars", car)
+        }
+    }
+</div>

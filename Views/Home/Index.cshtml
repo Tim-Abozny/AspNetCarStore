@@ -1,0 +1,16 @@
+﻿@model HomeViewComponent
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Favorite cars here</h2>
+<div class="row mt-5 mb-2">
+    <br />
+    @{
+        foreach (Car car in Model.favCars)
+        {
+            @Html.Partial("AllCars", car)
+        }
+    }
+</div>
